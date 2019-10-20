@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>View Station</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+<div class="row">
+          <div class="col-md-6">
+	<div class="card card-primary">
+               
+              <div class="card-header">
+             <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">STATION LIST</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody><tr>
+                  <th>STATION NAME</th>
+                  <th style="width: 40px">SEQUENCE</th>
+                  
+                </tr>
+                <tr th:each=" station : ${station}">
+
+                  <td th:text="${{station.stationName}}"></td>
+                  
+                  <td th:text="${{station.stationSequence}}"></td>
+                  
+				                
+                </tr>
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          </div> </div> </div>
+        </div>
+	</div>
+</body>
+</html>

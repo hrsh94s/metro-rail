@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+<div layout:fragment="content">
+	<div class="row">
+	<div class="col-md-6">
+	<div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Quick Example</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" action="#" th:action="@{/saveStation}" th:object="${station}" method="post">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Station Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Station"  th:field="*{stationName}" />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Station Sequence</label>
+                    <input type="text" class="form-control"  placeholder="Enter sequence" th:field="*{stationSequence}" />
+                  </div>
+                  
+                  
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            </div>
+	</div>
+</div>
+
+
+</body>
+</html>

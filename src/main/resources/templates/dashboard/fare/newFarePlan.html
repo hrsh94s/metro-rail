@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+
+<head>
+<title>Fare Plan</title>
+</head>
+<body>
+<div layout:fragment="content">
+	<div class="row">
+	<div class="col-md-6">
+	<div class="card card-primary">
+             
+              
+              <div class="box">
+            <div class="box-header" align="center">
+              <h3 class="box-title"><b>FARE PLAN</b></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody><tr>
+                  <th style="width:80px">Day</th>
+                  <th style="width: 1px">Fare</th>
+                  <th style="width: 10px"></th>
+                </tr>
+                <tr th:each="plan : ${plan}">
+                      
+                      <td th:text="${{plan.dayOfTheWeek}}"></td>
+                      <td th:text="${{plan.fare}}"></td>
+                      <td><a th:href="@{/updateFarePlan(id=${plan.id})}">
+							<i class="fa fa-edit "></i>
+					</a></td>
+                   
+             <!--     <a th:href="@{/deleteMetroCard(id=${metroCards.id})}">
+                <i class="fa fa-trash fa-lg"></i>
+              </a></td> --> 
+				                
+                </tr>
+              </tbody></table>
+            </div>
+           </div>
+           
+            </div>
+            </div>
+	</div>
+</div>
+
+
+</body>
+</html>
